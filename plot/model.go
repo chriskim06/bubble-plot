@@ -15,6 +15,9 @@ type Model struct {
 	canvas          *drawille.Canvas
 	showTitle       bool
 	data            [][]float64
+
+	horizontalLabelStart float64
+	horizontalLabelEnd   float64
 }
 
 func New(options ...Option) *Model {

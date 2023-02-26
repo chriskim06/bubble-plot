@@ -8,6 +8,8 @@ github.com/chriskim06/drawille-go v0.0.0-20230224171825-20dbf968d91a h1:LWT5ne/F
 github.com/chriskim06/drawille-go v0.0.0-20230224171825-20dbf968d91a/go.mod h1:8EYH/MowbgkD3KthzOAwiXK6S6flLUJKCexyttmHhYA=
 github.com/chriskim06/drawille-go v0.0.0-20230226011035-23dd602fe53d h1:VdN1LcmbSpQ8jPWG8oelOGiI2qQer36ZPPL7cJWPsPc=
 github.com/chriskim06/drawille-go v0.0.0-20230226011035-23dd602fe53d/go.mod h1:crZ9L4tSvNEwUJjxF2z+1RTq5P4CLZdUZeoD1XG7i3Q=
+github.com/chriskim06/drawille-go v0.0.0-20230226144544-7f184419505f h1:oTrBVDVmWw6Es6xaU8PxzRkXqmWblwSsr7Okv4eiHkE=
+github.com/chriskim06/drawille-go v0.0.0-20230226144544-7f184419505f/go.mod h1:crZ9L4tSvNEwUJjxF2z+1RTq5P4CLZdUZeoD1XG7i3Q=
 github.com/containerd/console v1.0.3 h1:lIr7SlA5PxZyMV30bDW0MGbiOPXwc63yRuCP0ARubLw=
 github.com/containerd/console v1.0.3/go.mod h1:7LqA/THxQ86k76b8c/EMSiaJ3h1eZkMkXar0TQ1gf3U=
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=

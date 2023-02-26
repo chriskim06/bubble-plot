@@ -9,7 +9,7 @@ type Styles struct {
 
 func NewDefaultStyles() Styles {
 	return Styles{
-		Container: lipgloss.NewStyle().Border(lipgloss.NormalBorder()).Margin(1),
+		Container: lipgloss.NewStyle().Border(lipgloss.NormalBorder()).Margin(1).Padding(0, 1),
 		Title:     lipgloss.NewStyle().Bold(true),
 	}
 }

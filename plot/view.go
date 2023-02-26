@@ -15,7 +15,11 @@ func (m Model) View() string {
 		availableHeight -= lipgloss.Height(title)
 		sections = append(sections, title)
 	}
-	sections = append(sections, m.canvas.Plot(m.data))
+	bounds := []float64{}
+	if m.horizontalLabelStart != m.horizontalLabelEnd {
+		bounds = append(bounds, m.horizontalLabelStart, m.horizontalLabelEnd)
+	}
+	sections = append(sections, m.canvas.Plot(m.data, bounds...))
 	g := lipgloss.JoinVertical(lipgloss.Left, sections...)
 	return m.Styles.Container.Render(g)
 }

@@ -9,9 +9,10 @@ import (
 
 type GraphUpdateMsg struct {
 	Data [][]float64
+	t    time.Time
 }
 
-var d = [][]float64{{150, 150}, {30, 30}}
+var d = [][]float64{{}, {}}
 
 func GraphUpdateCmd(data [][]float64) tea.Cmd {
 	return func() tea.Msg {
@@ -30,6 +31,11 @@ func (m *Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 		}
 	case GraphUpdateMsg:
 		m.data = msg.Data
+		t := float64(msg.t.Hour() + msg.t.Minute() + msg.t.Second())
+		if m.horizontalLabelStart == 0 {
+			m.horizontalLabelStart = t
+		}
+		m.horizontalLabelEnd = t
 		return m, m.tickCmd()
 	}
 	return m, nil
@@ -41,6 +47,7 @@ func (m Model) tickCmd() tea.Cmd {
 		d[1] = append(d[1], float64(t.Second()))
 		return GraphUpdateMsg{
 			Data: d,
+			t:    t,
 		}
 	})
 }
@@ -55,6 +62,6 @@ func (m *Model) SetSize(msg tea.WindowSizeMsg) {
 		v += m.Styles.Title.GetVerticalFrameSize()
 	}
 	canvas := drawille.NewCanvas(m.Width-h, m.Height-v)
-	canvas.LineColors = []drawille.AnsiColor{drawille.Red, drawille.SeaGreen}
+	canvas.LineColors = []drawille.Color{drawille.Red, drawille.SeaGreen}
 	m.canvas = &canvas
 }
