@@ -1,6 +1,7 @@
 package plot
 
 import (
+	"fmt"
 	"time"
 
 	tea "github.com/charmbracelet/bubbletea"
@@ -31,11 +32,12 @@ func (m *Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 		}
 	case GraphUpdateMsg:
 		m.data = msg.Data
-		t := float64(msg.t.Hour() + msg.t.Minute() + msg.t.Second())
-		if m.horizontalLabelStart == 0 {
-			m.horizontalLabelStart = t
-		}
-		m.horizontalLabelEnd = t
+		//         t := float64(msg.t.Hour() + msg.t.Minute() + msg.t.Second())
+		m.horizontalLabels = append(
+			m.horizontalLabels,
+			fmt.Sprintf("%02d:%02d:%02d", msg.t.Hour(), msg.t.Minute(), msg.t.Second()),
+		)
+		m.canvas.HorizontalLabels = m.horizontalLabels
 		return m, m.tickCmd()
 	}
 	return m, nil
@@ -62,6 +64,7 @@ func (m *Model) SetSize(msg tea.WindowSizeMsg) {
 		v += m.Styles.Title.GetVerticalFrameSize()
 	}
 	canvas := drawille.NewCanvas(m.Width-h, m.Height-v)
+	canvas.AxisColor = drawille.SeaGreen
 	canvas.LineColors = []drawille.Color{drawille.Red, drawille.SeaGreen}
 	m.canvas = &canvas
 }

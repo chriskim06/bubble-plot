@@ -11,19 +11,20 @@ type Model struct {
 	Title  string
 	Styles Styles
 
-	horizontalScale float64
-	canvas          *drawille.Canvas
-	showTitle       bool
-	data            [][]float64
-
-	horizontalLabelStart float64
-	horizontalLabelEnd   float64
+	horizontalScale  float64
+	canvas           *drawille.Canvas
+	showTitle        bool
+	data             [][]float64
+	horizontalLabels []string
 }
 
 func New(options ...Option) *Model {
+	c := drawille.NewCanvas(0, 0)
 	m := &Model{
-		Styles:    NewDefaultStyles(),
-		showTitle: true,
+		Styles:           NewDefaultStyles(),
+		showTitle:        true,
+		horizontalLabels: []string{},
+		canvas:           &c,
 	}
 	for _, option := range options {
 		option(m)

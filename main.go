@@ -9,7 +9,7 @@ import (
 )
 
 func main() {
-	if _, err := tea.NewProgram(plot.New(), tea.WithAltScreen()).Run(); err != nil {
+	if _, err := tea.NewProgram(plot.New()).Run(); err != nil {
 		fmt.Println(err)
 		os.Exit(1)
 	}
