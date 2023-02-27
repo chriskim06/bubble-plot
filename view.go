@@ -9,10 +9,8 @@ func (m Model) View() string {
 		return ""
 	}
 	sections := []string{}
-	availableHeight := m.Height
 	if m.showTitle && m.Title != "" {
 		title := m.Styles.Title.Render(m.Title)
-		availableHeight -= lipgloss.Height(title)
 		sections = append(sections, title)
 	}
 	sections = append(sections, m.canvas.Plot(m.data))

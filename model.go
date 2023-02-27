@@ -33,5 +33,5 @@ func New(options ...Option) *Model {
 }
 
 func (m Model) Init() tea.Cmd {
-	return m.tickCmd()
+	return nil
 }
