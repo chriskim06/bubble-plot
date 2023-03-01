@@ -43,7 +43,7 @@ func (m *Model) SetSize(msg tea.WindowSizeMsg) {
 		lineColors = append(lineColors, drawille.Color(c))
 	}
 	canvas.LineColors = lineColors
-	if len(m.horizontalLabels) == len(m.data[0]) {
+	if len(m.horizontalLabels) > 0 {
 		canvas.HorizontalLabels = m.horizontalLabels
 	}
 	m.canvas = &canvas
