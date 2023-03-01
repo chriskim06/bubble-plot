@@ -1,23 +1,26 @@
 package plot
 
 import (
-	"fmt"
 	"math"
+
+	"github.com/charmbracelet/lipgloss"
+	"github.com/chriskim06/drawille-go"
 )
 
-func GetMaxFloat64From2dSlice(slices [][]float64) (float64, error) {
-	if len(slices) == 0 {
-		return 0, fmt.Errorf("cannot get max value from empty slice")
-	}
-	var max float64
-	for _, slice := range slices {
-		for _, val := range slice {
-			if val > max {
-				max = val
-			}
+func colorToInt(c lipgloss.Color) drawille.Color {
+	r, g, b, _ := c.RGBA()
+	if r == g && g == b {
+		if r < 8 {
+			return drawille.Color(16)
+		} else if r > 248 {
+			return drawille.Color(231)
 		}
+		return drawille.Color(int(math.Round((float64(r-8)/247)*24) + 232))
 	}
-	return max, nil
+	return drawille.Color(int(16 +
+		(36 + math.Round(float64(r/255*5))) +
+		(6 * math.Round(float64((g / 255 * 5)))) +
+		math.Round(float64(b/255*5))))
 }
 
 func minMaxFloat64Slice(v []float64) (float64, float64) {

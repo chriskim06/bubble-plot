@@ -34,7 +34,12 @@ func (m *Model) SetSize(msg tea.WindowSizeMsg) {
 		v += m.Styles.Title.GetVerticalFrameSize()
 	}
 	canvas := drawille.NewCanvas(m.Width-h, m.Height-v)
-	canvas.AxisColor = drawille.SeaGreen
-	canvas.LineColors = []drawille.Color{drawille.Red, drawille.SeaGreen}
+	canvas.AxisColor = colorToInt(m.Styles.AxisColor)
+	canvas.LabelColor = colorToInt(m.Styles.LabelColor)
+	lineColors := []drawille.Color{}
+	for _, c := range m.Styles.LineColors {
+		lineColors = append(lineColors, colorToInt(c))
+	}
+	canvas.LineColors = lineColors
 	m.canvas = &canvas
 }
