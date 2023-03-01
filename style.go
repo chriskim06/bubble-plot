@@ -5,9 +5,9 @@ import "github.com/charmbracelet/lipgloss"
 type Styles struct {
 	Container  lipgloss.Style
 	Title      lipgloss.Style
-	AxisColor  lipgloss.Color
-	LabelColor lipgloss.Color
-	LineColors []lipgloss.Color
+	AxisColor  int
+	LabelColor int
+	LineColors []int
 }
 
 func NewDefaultStyles() Styles {
