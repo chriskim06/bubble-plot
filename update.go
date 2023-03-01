@@ -28,8 +28,7 @@ func (m *Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 func (m *Model) SetSize(msg tea.WindowSizeMsg) {
 	m.Width = msg.Width
 	m.Height = msg.Height
-	m.Styles.Container.MaxWidth(m.Width).Width(m.Width)
-	m.Styles.Container.MaxHeight(m.Height).Height(m.Height)
+	m.Styles.Container.Width(m.Width).Height(m.Height)
 	h, v := m.Styles.Container.GetFrameSize()
 	if m.showTitle && m.Title != "" {
 		v += m.Styles.Title.GetVerticalFrameSize()
