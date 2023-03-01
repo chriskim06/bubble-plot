@@ -6,7 +6,8 @@ import (
 )
 
 type GraphUpdateMsg struct {
-	Data [][]float64
+	Data   [][]float64
+	Labels []string
 }
 
 func GraphUpdateCmd(data [][]float64) tea.Cmd {
@@ -21,6 +22,7 @@ func (m *Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 		m.SetSize(msg)
 	case GraphUpdateMsg:
 		m.data = msg.Data
+		m.horizontalLabels = msg.Labels
 	}
 	return m, nil
 }
@@ -41,5 +43,8 @@ func (m *Model) SetSize(msg tea.WindowSizeMsg) {
 		lineColors = append(lineColors, drawille.Color(c))
 	}
 	canvas.LineColors = lineColors
+	if len(m.horizontalLabels) == len(m.data[0]) {
+		canvas.HorizontalLabels = m.horizontalLabels
+	}
 	m.canvas = &canvas
 }
