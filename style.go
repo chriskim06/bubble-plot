@@ -16,7 +16,7 @@ func NewDefaultStyles() Styles {
 		c = 0
 	}
 	return Styles{
-		Container:  lipgloss.NewStyle().Border(lipgloss.NormalBorder()).Margin(1).Padding(0, 1),
+		Container:  lipgloss.NewStyle().Border(lipgloss.NormalBorder()),
 		Title:      lipgloss.NewStyle().Bold(true),
 		AxisColor:  c,
 		LabelColor: c,
