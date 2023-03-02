@@ -14,6 +14,6 @@ func (m Model) View() string {
 		sections = append(sections, title)
 	}
 	sections = append(sections, m.canvas.Plot(m.data))
-	g := lipgloss.JoinVertical(lipgloss.Bottom, sections...)
+	g := lipgloss.JoinVertical(lipgloss.Left, sections...)
 	return m.Styles.Container.Render(g)
 }
