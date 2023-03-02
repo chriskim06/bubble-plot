@@ -22,7 +22,7 @@ func (m *Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 		m.SetSize(msg)
 	case GraphUpdateMsg:
 		m.data = msg.Data
-		m.horizontalLabels = msg.Labels
+		m.canvas.HorizontalLabels = msg.Labels
 	}
 	return m, nil
 }
