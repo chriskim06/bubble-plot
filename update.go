@@ -32,6 +32,9 @@ func (m *Model) SetSize(msg tea.WindowSizeMsg) {
 	m.Height = msg.Height
 	m.Styles.Container.Width(m.Width).Height(m.Height)
 	canvas := drawille.NewCanvas(m.Width, m.Height)
+	if m.MaxDataPoints > 0 {
+		canvas.NumDataPoints = m.MaxDataPoints
+	}
 	canvas.AxisColor = drawille.Color(m.Styles.AxisColor)
 	canvas.LabelColor = drawille.Color(m.Styles.LabelColor)
 	lineColors := []drawille.Color{}
