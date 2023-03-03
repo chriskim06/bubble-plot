@@ -5,7 +5,7 @@ go 1.20
 require (
 	github.com/charmbracelet/bubbletea v0.23.2
 	github.com/charmbracelet/lipgloss v0.6.0
-	github.com/chriskim06/drawille-go v0.0.0-20230303210829-6f0fe9bd6a94
+	github.com/chriskim06/drawille-go v0.0.0-20230303211018-936ecbb663a2
 )
 
 require (
