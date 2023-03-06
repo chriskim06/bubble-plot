@@ -11,7 +11,7 @@ type Model struct {
 	Title  string
 	Styles Styles
 
-	horizontalScale  float64
+	MaxDataPoints    int
 	canvas           *drawille.Canvas
 	showTitle        bool
 	data             [][]float64

@@ -22,7 +22,7 @@ func (m *Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 		m.SetSize(msg)
 	case GraphUpdateMsg:
 		m.data = msg.Data
-		//         m.canvas.HorizontalLabels = msg.Labels
+		m.canvas.HorizontalLabels = msg.Labels
 	}
 	return m, nil
 }
@@ -32,6 +32,9 @@ func (m *Model) SetSize(msg tea.WindowSizeMsg) {
 	m.Height = msg.Height
 	m.Styles.Container.Width(m.Width).Height(m.Height)
 	canvas := drawille.NewCanvas(m.Width, m.Height)
+	if m.MaxDataPoints > 0 {
+		canvas.NumDataPoints = m.MaxDataPoints
+	}
 	canvas.AxisColor = drawille.Color(m.Styles.AxisColor)
 	canvas.LabelColor = drawille.Color(m.Styles.LabelColor)
 	lineColors := []drawille.Color{}
@@ -39,8 +42,8 @@ func (m *Model) SetSize(msg tea.WindowSizeMsg) {
 		lineColors = append(lineColors, drawille.Color(c))
 	}
 	canvas.LineColors = lineColors
-	//     if len(m.horizontalLabels) > 0 {
-	//         canvas.HorizontalLabels = m.horizontalLabels
-	//     }
+	if len(m.horizontalLabels) > 0 {
+		canvas.HorizontalLabels = m.horizontalLabels
+	}
 	m.canvas = &canvas
 }
