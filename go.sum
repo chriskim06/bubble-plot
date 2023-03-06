@@ -31,6 +31,8 @@ github.com/chriskim06/drawille-go v0.0.0-20230302175235-0295e5373f58 h1:KxGaXZsx
 github.com/chriskim06/drawille-go v0.0.0-20230302175235-0295e5373f58/go.mod h1:crZ9L4tSvNEwUJjxF2z+1RTq5P4CLZdUZeoD1XG7i3Q=
 github.com/chriskim06/drawille-go v0.0.0-20230302181717-a5dd98780f5c h1:Lwu/f8LGTtdwdtn6zO0MT9pRsNwymbhUYRVszT6KFxQ=
 github.com/chriskim06/drawille-go v0.0.0-20230302181717-a5dd98780f5c/go.mod h1:crZ9L4tSvNEwUJjxF2z+1RTq5P4CLZdUZeoD1XG7i3Q=
+github.com/chriskim06/drawille-go v0.0.0-20230302191429-f00914c4bc7b h1:7fEJyPbQaFeUwTauQhuiwOoHAilsgF2VV0eKPv/rJiw=
+github.com/chriskim06/drawille-go v0.0.0-20230302191429-f00914c4bc7b/go.mod h1:crZ9L4tSvNEwUJjxF2z+1RTq5P4CLZdUZeoD1XG7i3Q=
 github.com/chriskim06/drawille-go v0.0.0-20230303182535-d8ea23fcf665 h1:HQzS39KCuYAFbeazXg35/bvo+kQAUnNMX7qajoK/DBE=
 github.com/chriskim06/drawille-go v0.0.0-20230303182535-d8ea23fcf665/go.mod h1:crZ9L4tSvNEwUJjxF2z+1RTq5P4CLZdUZeoD1XG7i3Q=
 github.com/chriskim06/drawille-go v0.0.0-20230303194217-11cca5c68a0a h1:+LlGhe61/u0/vodtp8H+en8qyqfY2kIwey+MU4ICLgY=
@@ -65,6 +67,8 @@ github.com/chriskim06/drawille-go v0.0.0-20230306154119-342eea733d63 h1:sj6V6GfD
 github.com/chriskim06/drawille-go v0.0.0-20230306154119-342eea733d63/go.mod h1:crZ9L4tSvNEwUJjxF2z+1RTq5P4CLZdUZeoD1XG7i3Q=
 github.com/chriskim06/drawille-go v0.0.0-20230306164021-ddcc5112f612 h1:ybC3RIwu1aHgBiLTdsSwJcvhv8vqXm52stYps+FKJnQ=
 github.com/chriskim06/drawille-go v0.0.0-20230306164021-ddcc5112f612/go.mod h1:crZ9L4tSvNEwUJjxF2z+1RTq5P4CLZdUZeoD1XG7i3Q=
+github.com/chriskim06/drawille-go v0.0.1 h1:tvjp14ni1J6iLpz9fj/iwyf23hKDhu6iLvUQNTaB8YU=
+github.com/chriskim06/drawille-go v0.0.1/go.mod h1:crZ9L4tSvNEwUJjxF2z+1RTq5P4CLZdUZeoD1XG7i3Q=
 github.com/containerd/console v1.0.3 h1:lIr7SlA5PxZyMV30bDW0MGbiOPXwc63yRuCP0ARubLw=
 github.com/containerd/console v1.0.3/go.mod h1:7LqA/THxQ86k76b8c/EMSiaJ3h1eZkMkXar0TQ1gf3U=
 github.com/lucasb-eyer/go-colorful v1.2.0 h1:1nnpGOrhyZZuNyfu1QjKiUICQ74+3FNCN69Aj6K7nkY=
