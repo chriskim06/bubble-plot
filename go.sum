@@ -7,6 +7,8 @@ github.com/charmbracelet/lipgloss v0.6.0 h1:1StyZB9vBSOyuZxQUcUwGr17JmojPNm87ini
 github.com/charmbracelet/lipgloss v0.6.0/go.mod h1:tHh2wr34xcHjC2HCXIlGSG1jaDF0S0atAUvBMP6Ppuk=
 github.com/chriskim06/drawille-go v0.0.2-0.20230308173046-cb6e3d513e37 h1:/lO9nK8bIR0ytu0RNN/0h6NTn6Iekewp6aniX4Qcpk8=
 github.com/chriskim06/drawille-go v0.0.2-0.20230308173046-cb6e3d513e37/go.mod h1:crZ9L4tSvNEwUJjxF2z+1RTq5P4CLZdUZeoD1XG7i3Q=
+github.com/chriskim06/drawille-go v0.0.2-0.20230308181026-49eceadfa0f3 h1:Jsl7psagnAi/YuXeiggx1MI2ujs6+RWWh0LrJAXssDQ=
+github.com/chriskim06/drawille-go v0.0.2-0.20230308181026-49eceadfa0f3/go.mod h1:crZ9L4tSvNEwUJjxF2z+1RTq5P4CLZdUZeoD1XG7i3Q=
 github.com/containerd/console v1.0.3 h1:lIr7SlA5PxZyMV30bDW0MGbiOPXwc63yRuCP0ARubLw=
 github.com/containerd/console v1.0.3/go.mod h1:7LqA/THxQ86k76b8c/EMSiaJ3h1eZkMkXar0TQ1gf3U=
 github.com/lucasb-eyer/go-colorful v1.2.0 h1:1nnpGOrhyZZuNyfu1QjKiUICQ74+3FNCN69Aj6K7nkY=
