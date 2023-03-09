@@ -22,23 +22,3 @@ func NewDefaultStyles() Styles {
 		LabelColor: c,
 	}
 }
-
-type Option func(*Model)
-
-func WithContainerStyle(style lipgloss.Style) Option {
-	return func(m *Model) {
-		m.Styles.Container = style
-	}
-}
-
-func WithTitleStyle(style lipgloss.Style) Option {
-	return func(m *Model) {
-		m.Styles.Title = style
-	}
-}
-
-func WithShowTitle(show bool) Option {
-	return func(m *Model) {
-		m.showTitle = show
-	}
-}
