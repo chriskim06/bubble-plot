@@ -10,9 +10,12 @@ type GraphUpdateMsg struct {
 	Labels []string
 }
 
-func GraphUpdateCmd(data [][]float64) tea.Cmd {
+func GraphUpdateCmd(data [][]float64, labels []string) tea.Cmd {
 	return func() tea.Msg {
-		return GraphUpdateMsg{Data: data}
+		return GraphUpdateMsg{
+			Data: data,
+			Labels: labels,
+		}
 	}
 }
 
