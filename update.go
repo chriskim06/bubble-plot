@@ -13,7 +13,7 @@ type GraphUpdateMsg struct {
 func GraphUpdateCmd(data [][]float64, labels []string) tea.Cmd {
 	return func() tea.Msg {
 		return GraphUpdateMsg{
-			Data: data,
+			Data:   data,
 			Labels: labels,
 		}
 	}
@@ -34,7 +34,11 @@ func (m *Model) SetSize(msg tea.WindowSizeMsg) {
 	m.Width = msg.Width
 	m.Height = msg.Height
 	m.Styles.Container.Width(m.Width).Height(m.Height)
-	canvas := drawille.NewCanvas(m.Width, m.Height)
+	height := m.Height
+	if m.showTitle {
+		height -= m.Styles.Title.GetVerticalFrameSize() + 1
+	}
+	canvas := drawille.NewCanvas(m.Width, height)
 	if m.MaxDataPoints > 0 {
 		canvas.NumDataPoints = m.MaxDataPoints
 	}

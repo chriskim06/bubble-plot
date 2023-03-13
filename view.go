@@ -9,7 +9,7 @@ func (m Model) View() string {
 		return ""
 	}
 	sections := []string{}
-	if m.showTitle && m.Title != "" {
+	if m.showTitle {
 		title := m.Styles.Title.Render(m.Title)
 		sections = append(sections, title)
 	}
