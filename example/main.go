@@ -10,18 +10,23 @@ import (
 	plot "github.com/chriskim06/bubble-plot"
 )
 
-var x = -1
-
 type model struct {
-	data [][]float64
-	p    *plot.Model
+	data  [][]float64
+	p     *plot.Model
+	count int
 }
 
 func newmodel() *model {
-	pl := plot.New()
-	pl.MaxDataPoints = 40
+	data := [][]float64{{}, {}}
+	pl := plot.New(
+		plot.WithAxisColor(135),
+		plot.WithLineColors([]int{9, 10}),
+		plot.WithMaxDataPoints(40),
+		plot.WithData(data),
+	)
+	pl.Title = "some sine function"
 	return &model{
-		data: [][]float64{{}, {}},
+		data: data,
 		p:    pl,
 	}
 }
@@ -42,6 +47,7 @@ func (m *model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 		if msg.String() == "q" {
 			return m, tea.Quit
 		}
+		return m, nil
 	case tickmsg:
 		// update data
 		if len(m.data[0]) == 40 {
@@ -49,7 +55,7 @@ func (m *model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 			m.data[1] = m.data[1][1:]
 		}
 		m.data[0] = append(m.data[0], 3)
-		m.data[1] = append(m.data[1], sindata())
+		m.data[1] = append(m.data[1], m.sindata())
 		m.p.Update(plot.GraphUpdateMsg{
 			Data: m.data,
 		})
@@ -70,9 +76,10 @@ func (m model) tick() tea.Cmd {
 	})
 }
 
-func sindata() float64 {
-	x++
-	return 2 * math.Sin((math.Pi/9)*float64(x))
+func (m *model) sindata() float64 {
+	val := 2 * math.Sin((math.Pi/9)*float64(m.count))
+	m.count++
+	return val
 }
 
 func main() {
